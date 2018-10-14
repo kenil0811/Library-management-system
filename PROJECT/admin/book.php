@@ -93,7 +93,7 @@ require('dbconn.php');
                                       <td><?php echo $bookid ?></td>
                                       <td><?php echo $name ?></td>
                                       <td><b><?php echo $avail ?></b></td>
-                                      <td><center><a href="details.php?id=<?php echo $bookid; ?>" class="btn btn-success">Details</a></center></td>
+                                      <td><center><a href="bookdetails.php?id=<?php echo $bookid; ?>" class="btn btn-success">Details</a></center></td>
                                     </tr>
                                <?php } ?>
                                </tbody>
