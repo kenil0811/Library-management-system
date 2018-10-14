@@ -68,12 +68,12 @@ require('dbconn.php');
                     <div class="span9">
                         <h3>About Me: <span>I am PRABHU</span></h3>
                     <ul>
-                    <li><span>User id</span>: 1</li>
-                    <li><span>Name</span>: Prabhu</li>
-                    <li><span>Category</span>: ST</li>
-                    <li><span>Roll No</span>: B160632CS</li>
-                    <li><span>Email</span>: info@example.com</li>
-                    <li><span>Phone</span>: (+91) 987654321</li>
+                    <li><span><b><u>User id</u></b></span>: 1</li>
+                    <li><span><b><u>Name</u></b></span>: Prabhu</li>
+                    <li><span><b><u>Category</u></b></span>: ST</li>
+                    <li><span><b><u>Roll No</u></b></span>: B160632CS</li>
+                    <li><span><b><u>Email</u></b></span>: info@example.com</li>
+                    <li><span><b><u>Phone</u></b></span>: (+91) 987654321</li>
                 </ul>
             </div>
                     <!--/.span9-->
