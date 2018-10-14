@@ -65,7 +65,32 @@ require('dbconn.php');
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
-                    
+                    <div class="span9">
+                        <table class="table" id = "books">
+                                  <thead>
+                                    <tr>
+                                      <th>Book id</th>
+                                      <th>Book name</th>
+                                      <th>Issue Date</th>
+                                      <th>Due date</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>DBMS</td>
+                                      <td>25/08/2018</td>
+                                      <td>24/11/2018</td>
+                                    </tr>
+                                    <tr>
+                                      <td>2</td>
+                                      <td>OS</td>
+                                      <td>20/07/2018</td>
+                                      <td>19/10/2018</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
                     <!--/.span9-->
                 </div>
             </div>
