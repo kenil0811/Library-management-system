@@ -68,6 +68,13 @@ require('dbconn.php');
                     </div>
 
                     <div class="span9">
+                        <div class="content">
+
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Book Details</h3>
+                            </div>
+                            <div class="module-body">
                         <?php
                             $x=$_GET['id'];
                             $sql="select * from LMS.book where BookId='$x'";
@@ -80,26 +87,29 @@ require('dbconn.php');
                                 $year=$row['Year'];
                                 $avail=$row['Availability'];
 
-                                echo "Book ID: ".$bookid."<br><br>";
-                                echo "Title: ".$name."<br><br>";
-                                echo "Publisher: ".$publisher."<br><br>";
-                                echo "Year: ".$year."<br><br>";
-                                echo "Availability: ".$avail."<br><br>";
-                                
+                                echo "<b>Book ID:</b> ".$bookid."<br><br>";
+                                echo "<b>Title:</b> ".$name."<br><br>";
                                 $sql1="select * from LMS.author where BookId='$bookid'";
                                 $result=$conn->query($sql1);
                                 
-                                echo "Author: ";
+                                echo "<b>Author:</b> ";
                                 while($row1=$result->fetch_assoc())
                                 {
                                     echo $row1['Author']."&nbsp;";
                                 }
+                                echo "<br><br>";
+                                echo "<b>Publisher:</b> ".$publisher."<br><br>";
+                                echo "<b>Year:</b> ".$year."<br><br>";
+                                echo "<b>Availability:</b> ".$avail."<br><br>";
+                                
+                                
                         
                            
                             ?>
                             
                              
-                               
+                               </div>
+                           </div>
                             </div>
                     <!--/.span3-->
                     <!--/.span9-->
