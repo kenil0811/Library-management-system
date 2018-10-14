@@ -74,20 +74,29 @@ require('dbconn.php');
                                       <th>Book id</th>
                                       <th>Book name</th>
                                       <th>Availability</th>
+                                      <th></th>
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    <?php
+                            $sql="select * from LMS.book";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc())
+                            {
+                                $bookid=$row['BookId'];
+                                $name=$row['Title'];
+                                $avail=$row['Availability'];
+                            
+                           
+                            ?>
                                     <tr>
-                                      <td>1</td>
-                                      <td>DBMS</td>
-                                      <td><b>AVAILABLE</b></td>
+                                      <td><?php echo $bookid ?></td>
+                                      <td><?php echo $name ?></td>
+                                      <td><b><?php echo $avail ?></b></td>
+                                      <td><center><a href="details.php?id=<?php echo $bookid; ?>" class="btn btn-success">Details</a></center></td>
                                     </tr>
-                                    <tr>
-                                      <td>2</td>
-                                      <td>OS</td>
-                                      <td><b>AVAILABLE</b></td>
-                                    </tr>
-                                  </tbody>
+                               <?php } ?>
+                               </tbody>
                                 </table>
                             </div>
                     <!--/.span3-->
