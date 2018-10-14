@@ -67,20 +67,7 @@ require('dbconn.php');
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
-                    <div class="span9">
-                        <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <a href="findbook.php" class="btn-box big span4"><i class=" icon-search"></i><b>Find Book</b>
-                                    </a><a href="findbookissue.php" class="btn-box big span4"><i class="icon-book"></i><b>Find Book Issue</b>
-                                    </a><a href="finduser.php" class="btn-box big span4"><i class="icon-user"></i><b>Find User</b>
-                                                                           </a>
-                                </div>
-                                </div>
-                            <!--/.module-->
-                        </div>
-                        <!--/.content-->
-                    </div>
+                    
                     <!--/.span9-->
                 </div>
             </div>

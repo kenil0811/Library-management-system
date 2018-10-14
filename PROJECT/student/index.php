@@ -66,21 +66,7 @@ require('dbconn.php');
                     </div>
                     <!--/.span3-->
                     
-                    <div class="span9">
-
-                        <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <a href="findbook.php" class="btn-box big span4"><i class=" icon-search"></i><b>Find Book</b>
-                                    </a>
-                                </div>
-                            </div>
-                            <!--/.module-->
-                        </div>
-                        
-                        <!--/.content-->
-                    </div>
-                
+                    
                     <!--/.span9-->
                 </div>
             </div>
