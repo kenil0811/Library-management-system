@@ -101,13 +101,13 @@ require('dbconn.php');
                                 echo "<b>Publisher:</b> ".$publisher."<br><br>";
                                 echo "<b>Year:</b> ".$year."<br><br>";
                                 echo "<b>Availability:</b> ".$avail."<br><br>";
-                                
+
                                 
                         
                            
                             ?>
                             
-                             
+                        <a href="book.php" class="btn btn-primary">Go Back</a>                             
                                </div>
                            </div>
                             </div>
