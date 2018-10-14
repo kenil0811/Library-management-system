@@ -1,21 +1,21 @@
-#books {
+#tables {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#books td, #books th {
+#tables td, #tables th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#books tr:nth-child(even){background-color: #fffff2;}
+#tables tr:nth-child(even){background-color: #fffff2;}
 
-#books tr:nth-child(odd){background-color: #e6e6ff;}
+#tables tr:nth-child(odd){background-color: #e6e6ff;}
 
-#books tr:hover {background-color: #ddd;}
+#tables tr:hover {background-color: #ddd;}
 
-#books th {
+#tables th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

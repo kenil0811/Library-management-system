@@ -66,7 +66,7 @@ require('dbconn.php');
                     </div>
                     <!--/.span3-->
                     <div class="span9">
-                        <table class="table" id = "books">
+                        <table class="table" id = "tables">
                                   <thead>
                                     <tr>
                                       <th>Book id</th>
@@ -78,12 +78,12 @@ require('dbconn.php');
                                     <tr>
                                       <td>1</td>
                                       <td>DBMS</td>
-                                      <td>3</td>
+                                      <td><b>AVAILABLE</b></td>
                                     </tr>
                                     <tr>
                                       <td>2</td>
                                       <td>OS</td>
-                                      <td>1</td>
+                                      <td><b>AVAILABLE</b></td>
                                     </tr>
                                   </tbody>
                                 </table>
