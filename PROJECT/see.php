@@ -1,15 +1,26 @@
 <?php
+session_start();
+
 if(isset($_POST['submit']))
 {
-	$title=$_POST['title'];
-	$author1=$_POST['author1'];
-	$author2=$_POST['author2'];
-	$author3=$_POST['author3'];
-	$publisher=$_POST['publisher'];
-	$year=$_POST['year'];
-	$availability=$_POST['availability'];
-	
-echo $title,$author1,$author2,$author3,$publisher,$year,$availability;
-}
+    $title=$_POST['title'];
+    $Description=$_POST['Description'];
+    $rollno=$_SESSION['RollNo'];
 
-?>
+$sql1="insert into LMS.recommendations (Book_Name,Description,RollNo) values ('$title','$Description','$rollno')"; 
+
+echo $rollno;
+
+/*
+if($conn->query($sql1) === TRUE){
+
+
+echo "<script type='text/javascript'>alert('Success')</script>";
+}
+else
+{//echo $conn->error;
+echo "<script type='text/javascript'>alert('Error')</script>";
+}*/
+    
+}
+?> 

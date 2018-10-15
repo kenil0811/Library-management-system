@@ -85,7 +85,6 @@ require('dbconn.php');
                                 $publisher=$row['Publisher'];
                                 $year=$row['Year'];
                                 $avail=$row['Availability'];
-
                                 echo "<b>Book ID:</b> ".$bookid."<br><br>";
                                 echo "<b>Title:</b> ".$name."<br><br>";
                                 $sql1="select * from LMS.author where BookId='$bookid'";
