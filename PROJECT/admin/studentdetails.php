@@ -67,42 +67,45 @@ require('dbconn.php');
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
-
+                    
                     <div class="span9">
-                        <table class="table" id = "tables">
-                                  <thead>
-                                    <tr>
-                                      <th>Student id</th>
-                                      <th>Name</th>
-                                      <th>Roll No.</th>
-                                      <th></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                    <?php
-                            $sql="select * from LMS.user";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc())
-                            {
+                        <div class="content">
 
-                                $studentid=$row['UserId'];
-                                $name=$row['Name'];
-                                $rollno=$row['RollNo'];
-                            
-                                
-                            if (!empty($rollno)) {
-                            ?>
-                                    <tr>
-                                      <td><?php echo $studentid ?></td>
-                                      <td><?php echo $name ?></td>
-                                      <td><?php echo $rollno ?></td>
-                                      <td><center><a href="studentdetails.php?id=<?php echo $rollno; ?>" class="btn btn-success">Details</a></center></td>
-                                    </tr>
-                            <?php }} ?>
-                                  </tbody>
-                                </table>
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Student Details</h3>
                             </div>
+                            <div class="module-body">
+                        <?php
+                            $rno=$_GET['id'];
+                            $sql="select * from LMS.user where RollNo='$rno'";
+                            $result=$conn->query($sql);
+                            $row=$result->fetch_assoc();    
+                            
+                                $userid=$row['UserId'];
+                                $name=$row['Name'];
+                                $username=$row['UserName'];
+                                $category=$row['Category'];
+                                $email=$row['EmailId'];
+                                $mobno=$row['MobNo'];
+
+
+                                echo "<b>UserID:</b> ".$userid."<br><br>";
+                                echo "<b><u>UserName:</u></b> ".$username."<br><br>";
+                                echo "<b><u>Name:</u></b> ".$name."<br><br>";
+                                echo "<b><u>Category:</u></b> ".$category."<br><br>";
+                                echo "<b><u>Roll No:</u></b> ".$rno."<br><br>";
+                                echo "<b><u>Email Id:</u></b> ".$email."<br><br>";
+                                echo "<b><u>Mobile No:</u></b> ".$mobno."<br><br>"; 
+                            ?>
+                            
+                        <a href="student.php" class="btn btn-primary">Go Back</a>                             
+                               </div>
+                           </div>
+                        </div>
+                    </div>
                     <!--/.span9-->
+
                 </div>
             </div>
             <!--/.container-->
@@ -125,5 +128,3 @@ require('dbconn.php');
     </body>
 
 </html>
-
-
