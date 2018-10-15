@@ -71,8 +71,7 @@ require('dbconn.php');
                     			<img class="card-img-top" src="images/profile2.png" alt="Card image cap">
                     			<div class="card-body">
                     				<br>
-                    				<h1 class="card-title">Name</h1>
-                    				<br>
+                    				<h1 class="card-title"><center>Name</center></h1>
                     				<br>
                     				<p><b>Email ID: </b>example@example.com</p>
                     				<br>
