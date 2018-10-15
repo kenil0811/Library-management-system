@@ -70,7 +70,7 @@ require('dbconn.php');
                            	<div class="card" style="width: 50%;"> 
                     			<img class="card-img-top" src="images/profile2.png" alt="Card image cap">
                     			<div class="card-body">
-                    				<br>
+                    				<i>
                     				<h1 class="card-title"><center>Name</center></h1>
                     				<br>
                     				<p><b>Email ID: </b>example@example.com</p>
@@ -80,7 +80,7 @@ require('dbconn.php');
                     				<p><b>Category: </b>OBC</p>
                     				<br>
                     				<p><b>Mobile number: </b>1234567890</p>
-                    				<br>
+                    				</b>
                     			</div>
                     		</div>
       					</center>              	
