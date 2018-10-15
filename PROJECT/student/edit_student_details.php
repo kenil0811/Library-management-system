@@ -128,7 +128,7 @@ require('dbconn.php');
                                     <div class="control-group">
                                         <label class="control-label" for="Password">New Password:</label>
                                         <div class="controls">
-                                            <input type="text" id="Password" name="Password" value= "<?php echo $pswd?>" class="span8" required>
+                                            <input type="password" id="Password" name="Password"  value= "<?php echo $pswd?>" class="span8" required>
                                         </div>
                                     </div>   
 
