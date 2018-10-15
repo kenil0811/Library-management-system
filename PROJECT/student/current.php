@@ -106,7 +106,7 @@ require('dbconn.php');
                             <?php } ?>
                                     </tbody>
                                 </table>
-                            </div>
+                    </div>
                     <!--/.span9-->
                 </div>
             </div>
