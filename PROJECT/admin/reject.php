@@ -17,7 +17,7 @@ header( "Refresh:1; url=requests.php", true, 303);
 else
 {
 	echo "<script type='text/javascript'>alert('Error')</script>";
-    header( "Refresh:1; url=requests.php", true, 303);
+    header( "Refresh:0.01; url=requests.php", true, 303);
 
 }
 
