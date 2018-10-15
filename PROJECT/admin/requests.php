@@ -73,6 +73,7 @@ require('dbconn.php');
                                       <th>Roll Number</th>
                                       <th>Book Id</th>
                                       <th>Book Name</th>
+                                      <th>Availabilty</th>
                                       <th></th>
                                     </tr>
                                   </thead>
@@ -85,6 +86,7 @@ require('dbconn.php');
                                 $bookid=$row['BookId'];
                                 $rollno=$row['RollNo'];
                                 $name=$row['Title'];
+                                $avail=$row['Availability'];
                             
                            
                             ?>
@@ -92,8 +94,12 @@ require('dbconn.php');
                                       <td><?php echo strtoupper($rollno) ?></td>
                                       <td><?php echo $bookid ?></td>
                                       <td><b><?php echo $name ?></b></td>
+                                      <td><?php echo $avail ?></td>
                                       <td><center>
-                                        <a href="accept.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-success">Accept</a>
+                                        <?php
+                                        if($avail > 0)
+                                        {echo "<a href=\"accept.php?id1=".$bookid."&id2=".$rollno."\" class=\"btn btn-success\">Accept</a>";}
+                                         ?>
                                         <a href="reject.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-danger">Reject</a>
                                     </center></td>
                                     </tr>
