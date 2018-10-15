@@ -98,7 +98,10 @@ require('dbconn.php');
                                       <td><?php echo $name ?></td>
                                       <td><?php echo $issuedate ?></td>
                                       <td><?php echo $duedate ?></td>
-                                      <td><center><a href="return_request.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Return</a></center></td>
+                                        <td><center>
+                                        <a href="renew_request.php?id=<?php echo $bookid; ?>" class="btn btn-success">Renew</a>
+                                        <a href="return_request.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Return</a>
+                                        </center></td>
                                     </tr>
                             <?php } ?>
                                     </tbody>
