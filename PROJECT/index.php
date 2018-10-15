@@ -107,7 +107,7 @@ if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
         
   }
 else 
- { echo "<script type='text/javascript'>alert('Failed to Login! Incorrect Email or Password')</script>";
+ { echo "<script type='text/javascript'>alert('Failed to Login! Incorrect RollNo or Password')</script>";
 }
    
 
