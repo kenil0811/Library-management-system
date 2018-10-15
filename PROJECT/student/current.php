@@ -89,7 +89,7 @@ require('dbconn.php');
                                 $bookid=$row['BookId'];
                                 $name=$row['Title'];
                                 $issuedate=$row['Date_of_Issue'];
-                                $duedate=$row['Date_of_Return'];
+                                $duedate=$row['Due_Date'];
                             
                             ?>
 
