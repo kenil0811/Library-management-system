@@ -67,6 +67,47 @@ require('dbconn.php');
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
+
+                    <div class="span9">
+                        <table class="table" id = "tables">
+                                  <thead>
+                                    <tr>
+                                      <th>Roll No</th>  
+                                      <th>Book id</th>
+                                      <th>Book name</th>
+                                      <th>Issue Date</th>
+                                      <th>Due date</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                <?php
+
+                            $sql="select * from LMS.record,LMS.book where Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
+
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc())
+                            {
+                                $rollno=$row['RollNo'];
+                                $bookid=$row['BookId'];
+                                $name=$row['Title'];
+                                $issuedate=$row['Date_of_Issue'];
+                                $duedate=$row['Date_of_Return'];
+                            
+                            ?>
+
+                                    <tr>
+                                      <td><?php echo $rollno ?></td>
+                                      <td><?php echo $bookid ?></td>
+                                      <td><?php echo $name ?></td>
+                                      <td><?php echo $issuedate ?></td>
+                                      <td><?php echo $duedate ?></td>
+                                    </tr>
+                            <?php } ?>
+                                    </tbody>
+                                </table>
+                    </div>
+
                     <!--/.span9-->
                 </div>
             </div>
