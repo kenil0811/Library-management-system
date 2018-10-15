@@ -65,7 +65,31 @@ require('dbconn.php');
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
-                    
+                    <div class="span9">
+                    	<center>
+                           	<div class="card" style="width: 70%;"> 
+                    			<img class="card-img-top" src="images/profile2.png" alt="Card image cap">
+                    			<div class="card-body">
+                    				<br>
+                    				<h1 class="card-title">Name</h1>
+                    				<br>
+                    				<br>
+                    				<br>
+                    				<p><b>Email ID: </b>example@example.com</p>
+                    				<br>
+                    				<br>
+                    				<p><b>Roll No: </B>B160511CS</p>
+                    				<br>
+                    				<br>
+                    				<p><b>Category: </b>OBC</p>
+                    				<br>
+                    				<br>
+                    				<p><b>Mobile number: </b>1234567890</p>
+                    				<br>
+                    			</div>
+                    		</div>
+      					</center>              	
+                    </div>
                     
                     <!--/.span9-->
                 </div>
