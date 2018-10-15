@@ -98,7 +98,10 @@ if ($_SESSION['RollNo']) {
                                       <td><?php echo $bookid ?></td>
                                       <td><?php echo $name ?></td>
                                       <td><b><?php echo $avail ?></b></td>
-                                      <td><center><a href="bookdetails.php?id=<?php echo $bookid; ?>" class="btn btn-success">Details</a></center></td>
+                                        <td><center>
+                                            <a href="bookdetails.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Details</a>
+                                            <a href="edit_book_details.php?id=<?php echo $bookid; ?>" class="btn btn-success">Edit</a>
+                                        </center></td>
                                     </tr>
                                <?php } ?>
                                </tbody>
