@@ -88,7 +88,7 @@ require('dbconn.php');
 if(isset($_POST['signin']))
 {$u=$_POST['RollNo'];
  $p=$_POST['Password'];
- $c=$_POST['category'];
+ $c=$_POST['Category'];
 
  $sql="select * from LMS.user where RollNo='$u'";
 
