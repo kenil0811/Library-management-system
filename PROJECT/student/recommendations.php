@@ -84,14 +84,14 @@ if ($_SESSION['RollNo']) {
 
                                     <form class="form-horizontal row-fluid" action="recommendations.php" method="post">
                                         <div class="control-group">
-                                            <label class="control-label" for="Title">Book Title</label>
+                                            <label class="control-label" for="Title"><b>Book Title</b></label>
                                             <div class="controls">
                                                 <input type="text" id="title" name="title" placeholder="Title" class="span8" required>
                                             </div>
                                         </div>
                                         
                                         <div class="control-group">
-                                            <label class="control-label" for="Description">Description</label>
+                                            <label class="control-label" for="Description"><b>Description</b></label>
                                             <div class="controls">
                                                 <input type="text" id="Description" name="Description" placeholder="Description" class="span8" required>
                                             </div>

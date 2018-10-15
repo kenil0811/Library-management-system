@@ -87,13 +87,13 @@ if ($_SESSION['RollNo']) {
 
                                     <form class="form-horizontal row-fluid" action="addbook.php" method="post">
                                         <div class="control-group">
-                                            <label class="control-label" for="Title">Book Title</label>
+                                            <label class="control-label" for="Title"><b>Book Title</b></label>
                                             <div class="controls">
                                                 <input type="text" id="title" name="title" placeholder="Title" class="span8" required>
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="Author">Author</label>
+                                            <label class="control-label" for="Author"><b>Author</b></label>
                                             <div class="controls">
                                                 <input type="text" id="author1" name="author1" class="span8" required>
                                                 <input type="text" id="author2" name="author2" class="span8">
@@ -102,19 +102,19 @@ if ($_SESSION['RollNo']) {
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="Publisher">Publisher</label>
+                                            <label class="control-label" for="Publisher"><b>Publisher</b></label>
                                             <div class="controls">
                                                 <input type="text" id="publisher" name="publisher" placeholder="Publisher" class="span8" required>
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="Year">Year</label>
+                                            <label class="control-label" for="Year"><b>Year</b></label>
                                             <div class="controls">
                                                 <input type="text" id="year" name="year" placeholder="Year" class="span8" required>
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="Availability">Number of Copies</label>
+                                            <label class="control-label" for="Availability"><b>Number of Copies</b></label>
                                             <div class="controls">
                                                 <input type="text" id="availability" name="availability" placeholder="Number of Copies" class="span8" required>
                                             </div>

@@ -91,14 +91,14 @@ require('dbconn.php');
                                 <form class="form-horizontal row-fluid" action="edit_student_details.php?id=<?php echo $rollno ?>" method="post">
 
                                     <div class="control-group">
-                                        <label class="control-label" for="Name">Name:</label>
+                                        <label class="control-label" for="Name"><b>Name:</b></label>
                                         <div class="controls">
                                             <input type="text" id="Name" name="Name" value= "<?php echo $name?>" class="span8" required>
                                         </div>
                                     </div>
 
                                     <div class="control-group">
-                                            <label class="control-label" for="Category">Category:</label>
+                                            <label class="control-label" for="Category"><b>Category:</b></label>
                                             <div class="controls">
                                                 <select name = "Category" tabindex="1" value="SC" data-placeholder="Select Category" class="span6">
                                                     <option value="<?php echo $category?>"><?php echo $category ?> </option>
@@ -112,21 +112,21 @@ require('dbconn.php');
 
 
                                     <div class="control-group">
-                                        <label class="control-label" for="EmailId">Email Id:</label>
+                                        <label class="control-label" for="EmailId"><b>Email Id:</b></label>
                                         <div class="controls">
                                             <input type="text" id="EmailId" name="EmailId" value= "<?php echo $email?>" class="span8" required>
                                         </div>
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label" for="MobNo">Mobile Number:</label>
+                                        <label class="control-label" for="MobNo"><b>Mobile Number:</b></label>
                                         <div class="controls">
                                             <input type="text" id="MobNo" name="MobNo" value= "<?php echo $mobno?>" class="span8" required>
                                         </div>
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label" for="Password">New Password:</label>
+                                        <label class="control-label" for="Password"><b>New Password:</b></label>
                                         <div class="controls">
                                             <input type="password" id="Password" name="Password"  value= "<?php echo $pswd?>" class="span8" required>
                                         </div>
