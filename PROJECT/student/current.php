@@ -90,6 +90,7 @@ require('dbconn.php');
                                 $name=$row['Title'];
                                 $issuedate=$row['Date_of_Issue'];
                                 $duedate=$row['Due_Date'];
+                                $renewals=$row['Renewals_left'];
                             
                             ?>
 
@@ -99,7 +100,10 @@ require('dbconn.php');
                                       <td><?php echo $issuedate ?></td>
                                       <td><?php echo $duedate ?></td>
                                         <td><center>
-                                        <a href="renew_request.php?id=<?php echo $bookid; ?>" class="btn btn-success">Renew</a>
+                                        <?php 
+                                         if($renewals)
+                                            echo "<a href=\"renew_request.php?id=".$bookid."\" class=\"btn btn-success\">Renew</a>";
+                                        ?>
                                         <a href="return_request.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Return</a>
                                         </center></td>
                                     </tr>
