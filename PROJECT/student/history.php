@@ -69,6 +69,7 @@ if ($_SESSION['RollNo']) {
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
+                    
                     <div class="span9">
                         <table class="table" id = "tables">
                                   <thead>
@@ -76,25 +77,35 @@ if ($_SESSION['RollNo']) {
                                       <th>Book id</th>
                                       <th>Book name</th>
                                       <th>Issue Date</th>
-                                      <th>Return date</th>
+                                      <th>Return Date</th>
                                     </tr>
                                   </thead>
                                   <tbody>
+
+                                <?php
+
+                            $rollno = $_SESSION['RollNo'];
+                            $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId";
+
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc())
+                            {
+                                $bookid=$row['BookId'];
+                                $name=$row['Title'];
+                                $issuedate=$row['Date_of_Issue'];
+                                $returndate=$row['Date_of_Return'];                            
+                            ?>
+
                                     <tr>
-                                      <td>1</td>
-                                      <td>DBMS</td>
-                                      <td>10/07/2018</td>
-                                      <td>10/09/2018</td>
+                                      <td><?php echo $bookid ?></td>
+                                      <td><?php echo $name ?></td>
+                                      <td><?php echo $issuedate ?></td>
+                                      <td><?php echo $returndate ?></td>
                                     </tr>
-                                    <tr>
-                                      <td>2</td>
-                                      <td>OS</td>
-                                      <td>05/07/2018</td>
-                                      <td>07/10/2018</td>
-                                    </tr>
-                                  </tbody>
+                            <?php } ?>
+                                    </tbody>
                                 </table>
-                            </div>
+                    </div>
                     <!--/.span9-->
                 </div>
             </div>
