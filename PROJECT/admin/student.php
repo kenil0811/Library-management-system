@@ -72,33 +72,33 @@ require('dbconn.php');
                         <table class="table" id = "tables">
                                   <thead>
                                     <tr>
-                                      <th>Student id</th>
                                       <th>Name</th>
                                       <th>Roll No.</th>
+                                      <th>Email id</th>                                      
                                       <th></th>
                                     </tr>
                                   </thead>
                                   <tbody>
                     <?php
-                            $sql="select * from LMS.user";
+                            $sql="select * from LMS.user where RollNo<>'ADMIN'";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
 
-                                $studentid=$row['UserId'];
+                                $email=$row['EmailId'];
                                 $name=$row['Name'];
                                 $rollno=$row['RollNo'];
                             
                                 
-                            if (!empty($rollno)) {
+                        
                             ?>
                                     <tr>
-                                      <td><?php echo $studentid ?></td>
                                       <td><?php echo $name ?></td>
                                       <td><?php echo $rollno ?></td>
+                                      <td><?php echo $email ?></td>                                      
                                       <td><center><a href="studentdetails.php?id=<?php echo $rollno; ?>" class="btn btn-success">Details</a></center></td>
                                     </tr>
-                            <?php }} ?>
+                            <?php } ?>
                                   </tbody>
                                 </table>
                             </div>

@@ -37,7 +37,7 @@ require('dbconn.php');
 		<div class="login">
 			<h2>Sign In</h2>
 			<form action="index.php" method="post">
-				<input type="text" Name="UserName" placeholder="Username" required="">
+				<input type="text" Name="RollNo" placeholder="RollNo" required="">
 				<input type="password" Name="Password" placeholder="Password" required="">
 			
 			
@@ -54,7 +54,6 @@ require('dbconn.php');
 			<h2>Sign Up</h2>
 			<form action="index.php" method="post">
 				<input type="text" Name="Name" placeholder="Name" required>
-				<input type="text" Name="UserName" placeholder="User Name" required>
 				<input type="text" Name="Email" placeholder="Email" required>
 				<input type="password" Name="Password" placeholder="Password" required>
 				<input type="text" Name="PhoneNumber" placeholder="Phone Number" required>
@@ -72,7 +71,7 @@ require('dbconn.php');
 			    <input type="submit" name="signup" value="Sign Up">
 				</form>
 			</div>
-			<p>By creating an account, you agree to our <a class="underline w3layouts agileits" href="#">Terms</a></p>
+			<p>By creating an account, you agree to our <a class="underline" href="#">Terms</a></p>
 			<div class="clear"></div>
 		</div>
 
@@ -86,19 +85,19 @@ require('dbconn.php');
 
 <?php
 if(isset($_POST['signin']))
-{$u=$_POST['UserName'];
+{$u=$_POST['RollNo'];
  $p=$_POST['Password'];
 
- $sql="select * from LMS.user where UserName='$u'";
+ $sql="select * from LMS.user where RollNo='$u'";
 
  $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $x=$row['Password'];
 $y=$row['Type'];
-if(strcmp($x,$p)==0 && !empty($u) && !empty($p))
+if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
   {//echo "Login Successful";
-   $_SESSION['UseName']=$u;
-   $_SESSION['UserId']=$row['UserId'];
+   $_SESSION['RollNo']=$u;
+   
 
   if($y=='Admin')
    header('location:admin/index.php');
@@ -116,7 +115,6 @@ else
 if(isset($_POST['signup']))
 {
 	$name=$_POST['Name'];
-	$username=$_POST['UserName'];
 	$email=$_POST['Email'];
 	$password=$_POST['Password'];
 	$mobno=$_POST['PhoneNumber'];
@@ -124,7 +122,7 @@ if(isset($_POST['signup']))
 	$category=$_POST['Category'];
 	$type='Student';
 
-	$sql="insert into LMS.user (Name,UserName,Type,Category,RollNo,EmailId,MobNo,Password) values ('$name','$username','$type','$category','$rollno','$email','$mobno','$password')";
+	$sql="insert into LMS.user (Name,Type,Category,RollNo,EmailId,MobNo,Password) values ('$name','$type','$category','$rollno','$email','$mobno','$password')";
 
 	if ($conn->query($sql) === TRUE) {
 echo "<script type='text/javascript'>alert('Registration Successful')</script>";

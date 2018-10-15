@@ -82,16 +82,12 @@ require('dbconn.php');
                             $result=$conn->query($sql);
                             $row=$result->fetch_assoc();    
                             
-                                $userid=$row['UserId'];
                                 $name=$row['Name'];
-                                $username=$row['UserName'];
                                 $category=$row['Category'];
                                 $email=$row['EmailId'];
                                 $mobno=$row['MobNo'];
 
 
-                                echo "<b>UserID:</b> ".$userid."<br><br>";
-                                echo "<b><u>UserName:</u></b> ".$username."<br><br>";
                                 echo "<b><u>Name:</u></b> ".$name."<br><br>";
                                 echo "<b><u>Category:</u></b> ".$category."<br><br>";
                                 echo "<b><u>Roll No:</u></b> ".$rno."<br><br>";
