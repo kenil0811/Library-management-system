@@ -99,7 +99,7 @@ require('dbconn.php');
                     			</div>
                     		</div>
                             <br>
-                            <a href="profile.php" class="btn btn-primary">Edit Details</a>    
+                            <a href="edit_student_details.php" class="btn btn-primary">Edit Details</a>    
       					</center>              	
                     </div>
                     

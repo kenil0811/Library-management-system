@@ -2,9 +2,6 @@
 require('dbconn.php');
 ?>
 
-<?php 
-if ($_SESSION['RollNo']) {
-    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,16 +67,75 @@ if ($_SESSION['RollNo']) {
                     </div>
                     <!--/.span3-->
                     <div class="span9">
-                        <h3>About Me: <span>I am PRABHU</span></h3>
-                    <ul>
-                    <li><span><b><u>User id</u></b></span>: 1</li>
-                    <li><span><b><u>Name</u></b></span>: Prabhu</li>
-                    <li><span><b><u>Category</u></b></span>: ST</li>
-                    <li><span><b><u>Roll No</u></b></span>: B160632CS</li>
-                    <li><span><b><u>Email</u></b></span>: info@example.com</li>
-                    <li><span><b><u>Phone</u></b></span>: (+91) 987654321</li>
-                </ul>
-            </div>
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Update Details</h3>
+                            </div>
+                            <div class="module-body">
+
+
+                                <?php
+                                $rollno = $_SESSION['RollNo'];
+                                $sql="select * from LMS.user where RollNo='$rollno'";
+                                $result=$conn->query($sql);
+                                $row=$result->fetch_assoc();
+
+                                $name=$row['Name'];
+                                $category=$row['Category'];
+                                $email=$row['EmailId'];
+                                $mobno=$row['MobNo'];
+                                $pswd=$row['Password'];
+                                ?>    
+                    			
+                                <form class="form-horizontal row-fluid" action="edit_book_details.php?id=<?php echo $bookid ?>" method="post">
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="Name">Name:</label>
+                                        <div class="controls">
+                                            <input type="text" id="Name" name="Publisher" value= "<?php echo $name?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="Category">Category:</label>
+                                        <div class="controls">
+                                            <input type="text" id="Category" name="Category" value= "<?php echo $category?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="EmailId">Email Id:</label>
+                                        <div class="controls">
+                                            <input type="text" id="EmailId" name="EmailId" value= "<?php echo $email?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="MobNo">Mobile Number:</label>
+                                        <div class="controls">
+                                            <input type="text" id="MobNo" name="MobNo" value= "<?php echo $mobno?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="Password">New Password:</label>
+                                        <div class="controls">
+                                            <input type="text" id="Password" name="Password" value= "<?php echo $pswd?>" class="span8" required>
+                                        </div>
+                                    </div>   
+
+                                    <div class="control-group">
+                                            <div class="controls">
+                                                <button type="submit" name="submit"class="btn-primary"><center>Update Details</center></button>
+                                            </div>
+                                        </div>                                                                     
+
+                                </form>
+                    		           
+                        </div>
+                        </div> 	
+                    </div>
+                    
                     <!--/.span9-->
                 </div>
             </div>
@@ -103,8 +159,3 @@ if ($_SESSION['RollNo']) {
     </body>
 
 </html>
-
-<?php }
-else {
-    echo "<script type='text/javascript'>alert('Access Denied!!!')</script>";
-} ?>
