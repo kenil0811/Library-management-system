@@ -67,6 +67,39 @@ require('dbconn.php');
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
+
+                    <div class="span9">
+                        <table class="table" id = "tables">
+                                  <thead>
+                                    <tr>
+                                      <th>Book Name</th>
+                                      <th>Description</th>
+                                      <th>Recommended By</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <?php
+                            $sql="select * from LMS.recommendations";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc())
+                            {
+                                $bookname=$row['Book_Name'];
+                                $description=$row['Description'];
+                                $rollno=$row['RollNo'];
+                            ?>
+                                    <tr>
+                                      <td><?php echo $bookname ?></td>
+                                      <td><?php echo $description?></td>
+                                      <td><b><?php echo strtoupper($rollno)?></b></td>
+
+                                    </tr>
+                               <?php } ?>
+                               </tbody>
+                                </table>
+
+                                <center>
+                                <a href="addbook.php" class="btn btn-success">Add a Book</a></center>
+                    </div>
                     <!--/.span9-->
                 </div>
             </div>

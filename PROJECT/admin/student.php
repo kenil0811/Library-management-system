@@ -88,15 +88,17 @@ require('dbconn.php');
                                 $email=$row['EmailId'];
                                 $name=$row['Name'];
                                 $rollno=$row['RollNo'];
-                            
-                                
-                        
                             ?>
                                     <tr>
                                       <td><?php echo $name ?></td>
                                       <td><?php echo $rollno ?></td>
                                       <td><?php echo $email ?></td>                                      
-                                      <td><center><a href="studentdetails.php?id=<?php echo $rollno; ?>" class="btn btn-success">Details</a></center></td>
+                                        <td>
+                                        <center>
+                                            <a href="studentdetails.php?id=<?php echo $rollno; ?>" class="btn btn-success">Details</a>
+                                            <a href="remove_student.php?id=<?php echo $rollno; ?>" class="btn btn-danger">Remove</a>
+                                      </center>
+                                        </td>
                                     </tr>
                             <?php } ?>
                                   </tbody>

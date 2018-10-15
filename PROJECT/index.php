@@ -59,7 +59,7 @@ require('dbconn.php');
 				<input type="text" Name="PhoneNumber" placeholder="Phone Number" required>
 				<input type="text" Name="RollNo" placeholder="Roll Number" required="">
 				
-				<select name="Category" id="category">
+				<select name="Category" id="Category">
 					<option value="GEN">General</option>
 					<option value="OBC">OBC</option>
 					<option value="SC">SC</option>
@@ -88,6 +88,7 @@ require('dbconn.php');
 if(isset($_POST['signin']))
 {$u=$_POST['RollNo'];
  $p=$_POST['Password'];
+ $c=$_POST['Category'];
 
  $sql="select * from LMS.user where RollNo='$u'";
 
@@ -107,7 +108,7 @@ if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
         
   }
 else 
- { echo "<script type='text/javascript'>alert('Failed to Login! Incorrect Email or Password')</script>";
+ { echo "<script type='text/javascript'>alert('Failed to Login! Incorrect RollNo or Password')</script>";
 }
    
 
