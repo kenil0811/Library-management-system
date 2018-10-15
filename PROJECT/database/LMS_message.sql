@@ -16,30 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `book`
+-- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `book`;
+DROP TABLE IF EXISTS `message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `book` (
-  `BookId` int(10) NOT NULL AUTO_INCREMENT,
-  `Title` varchar(50) DEFAULT NULL,
-  `Publisher` varchar(50) DEFAULT NULL,
-  `Year` varchar(50) DEFAULT NULL,
-  `Availability` int(5) DEFAULT NULL,
-  PRIMARY KEY (`BookId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+CREATE TABLE `message` (
+  `M_Id` int(10) NOT NULL AUTO_INCREMENT,
+  `RollNo` varchar(50) DEFAULT NULL,
+  `Msg` varchar(255) DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  `Time` time DEFAULT NULL,
+  PRIMARY KEY (`M_Id`),
+  KEY `RollNo` (`RollNo`),
+  CONSTRAINT `message_ibfk_1` FOREIGN KEY (`RollNo`) REFERENCES `user` (`RollNo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `book`
+-- Dumping data for table `message`
 --
 
-LOCK TABLES `book` WRITE;
-/*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'OS','PEARSON','2006',0),(2,'DBMS','TARGET','2010',1),(3,'TOC','NITC','2018',4),(4,'TOC','NITC','2018',1),(5,'DAA','y','2014',0);
-/*!40000 ALTER TABLE `book` ENABLE KEYS */;
+LOCK TABLES `message` WRITE;
+/*!40000 ALTER TABLE `message` DISABLE KEYS */;
+INSERT INTO `message` VALUES (1,'b160111cs','Your request for BookId: 1  has been accepted','2018-10-15','23:47:40'),(2,'B160158CS','Your request for BookId: 1  has been accepted','2018-10-15','23:47:50'),(3,'B160158CS','Your request for BookId: 2  has been rejected','2018-10-15','23:47:58');
+/*!40000 ALTER TABLE `message` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
