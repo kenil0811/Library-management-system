@@ -102,7 +102,7 @@ if ($_SESSION['RollNo']) {
                                 </div>
                             </div>
                         <br>
-                        <a href="profile.php" class="btn btn-primary">Edit Details</a>
+                        <a href="edit_admin_details.php" class="btn btn-primary">Edit Details</a>
                         </center>               
                     </div>
                     
