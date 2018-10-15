@@ -548,7 +548,12 @@ input[type="text"], input[type="password"] {
 }
 
 #category{
- width:250px
+ width:50%;
+ color: rgb(255, 255, 255);
+ text-align: center;
+ background: transparent;
+ border: transparent;
+
 }
 
 
