@@ -90,9 +90,21 @@ require('dbconn.php');
                                     <tr>
                                       <td><?php echo $bookid ?></td>
                                       <td><?php echo $name ?></td>
-                                      <td><b>AVAILABLE</b></td>
+                                      <td><b><?php 
+                                           if($avail > 0)
+                                              echo "<font color=\"green\">AVAILABLE</font>";
+                                            else
+                                            	echo "<font color=\"red\">NOT AVAILABLE</font>";
+
+                                                 ?>
+                                                 	
+                                                 </b></td>
                                       <td><center><a href="bookdetails.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Details</a>
-                                        <a href="issue_request.php?id=<?php echo $bookid; ?>" class="btn btn-success">Issue</a></center></td>
+                                      	<?php
+                                      	if($avail > 0)
+                                      		echo "<a href=\"issue_request.php?id=".$bookid."\" class=\"btn btn-success\">Issue</a>";
+                                        ?>
+                                        </center></td>
                                     </tr>
                                <?php } ?>
                                </tbody>
