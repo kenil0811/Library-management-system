@@ -73,22 +73,35 @@ require('dbconn.php');
                                       <th>Book name</th>
                                       <th>Issue Date</th>
                                       <th>Due date</th>
+                                      <th></th>
                                     </tr>
                                   </thead>
                                   <tbody>
+
+                                <?php
+
+                            $rollno = $_SESSION['RollNo'];
+                            $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
+
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc())
+                            {
+                                $bookid=$row['BookId'];
+                                $name=$row['Title'];
+                                $issuedate=$row['Date_of_Issue'];
+                                $duedate=$row['Date_of_Return'];
+                            
+                            ?>
+
                                     <tr>
-                                      <td>1</td>
-                                      <td>DBMS</td>
-                                      <td>25/08/2018</td>
-                                      <td>24/11/2018</td>
+                                      <td><?php echo $bookid ?></td>
+                                      <td><?php echo $name ?></td>
+                                      <td><?php echo $issuedate ?></td>
+                                      <td><?php echo $duedate ?></td>
+                                      <td><center><a href="return_request.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Return</a></center></td>
                                     </tr>
-                                    <tr>
-                                      <td>2</td>
-                                      <td>OS</td>
-                                      <td>20/07/2018</td>
-                                      <td>19/10/2018</td>
-                                    </tr>
-                                  </tbody>
+                            <?php } ?>
+                                    </tbody>
                                 </table>
                             </div>
                     <!--/.span9-->

@@ -9,7 +9,7 @@ $sql="insert into LMS.record (RollNo,BookId) values ('$roll','$id')";
 
 if($conn->query($sql) === TRUE)
 {
-echo "<script type='text/javascript'>alert('Success')</script>";
+echo "<script type='text/javascript'>alert('Request Sent to Admin.')</script>";
 header( "Refresh:1; url=book.php", true, 303);
 }
 else
