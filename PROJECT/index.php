@@ -99,7 +99,6 @@ $y=$row['Type'];
 if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
   {//echo "Login Successful";
    $_SESSION['RollNo']=$u;
-   $_SESSION['Category']=$c;
    
 
   if($y=='Admin')
