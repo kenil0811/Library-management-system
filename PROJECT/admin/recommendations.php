@@ -90,7 +90,7 @@ require('dbconn.php');
                                     <tr>
                                       <td><?php echo $bookname ?></td>
                                       <td><?php echo $description?></td>
-                                      <td><b><?php echo $rollno?></b></td>
+                                      <td><b><?php echo strtoupper($rollno)?></b></td>
 
                                     </tr>
                                <?php } ?>
