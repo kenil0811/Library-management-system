@@ -67,7 +67,7 @@ require('dbconn.php');
                     <!--/.span3-->
                     <div class="span9">
                     	<center>
-                           	<div class="card" style="width: 60%;"> 
+                           	<div class="card" style="width: 50%;"> 
                     			<img class="card-img-top" src="images/profile2.png" alt="Card image cap">
                     			<div class="card-body">
                     				<br>
