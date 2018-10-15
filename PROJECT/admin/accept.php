@@ -18,7 +18,7 @@ if($category == 'GEN' || $category == 'OBC' )
 if($conn->query($sql1) === TRUE)
 {$sql3="update LMS.book set Availability=Availability-1 where BookId='$bookid'";
  $result=$conn->query($sql3);
- $sql5="insert into LMS.message (RollNo,Msg) values ('$rollno','Your request for BookId: $bookid  has been accepted')";
+ $sql5="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','Your request for BookId: $bookid  has been accepted',curdate(),curtime())";
  $result=$conn->query($sql5);
 echo "<script type='text/javascript'>alert('Success')</script>";
 header( "Refresh:1; url=requests.php", true, 303);
@@ -36,7 +36,7 @@ else
 if($conn->query($sql2) === TRUE)
 {$sql4="update LMS.book set Availability=Availability-1 where BookId='$bookid'";
  $result=$conn->query($sql4);
- $sql6="insert into LMS.message (RollNo,Msg) values ('$rollno','Your request for BookId: $bookid has been accepted')";
+ $sql6="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','Your request for BookId: $bookid has been accepted',curdate(),curtime())";
  $result=$conn->query($sql6);
 echo "<script type='text/javascript'>alert('Success')</script>";
 header( "Refresh:1; url=requests.php", true, 303);
