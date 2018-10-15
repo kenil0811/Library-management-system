@@ -1,6 +1,11 @@
 <?php
 require('dbconn.php');
 ?>
+
+<?php 
+if ($_SESSION['RollNo']) {
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,3 +199,7 @@ echo "<script type='text/javascript'>alert('Error')</script>";
 </html>
 
 
+<?php }
+else {
+    echo "<script type='text/javascript'>alert('Access Denied!!!')</script>";
+} ?>
