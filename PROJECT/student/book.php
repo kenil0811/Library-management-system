@@ -81,7 +81,7 @@ if ($_SESSION['RollNo']) {
                                   </thead>
                                   <tbody>
                                     <?php
-                            $sql="select * from LMS.book";
+                            $sql="select * from LMS.book order by Availability DESC";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
