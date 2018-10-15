@@ -73,6 +73,39 @@ if ($_SESSION['RollNo']) {
                     </div>
                     <!--/.span3-->
                     
+                    <div class="span9">
+                        <center>
+                            <div class="card" style="width: 50%;"> 
+                                <img class="card-img-top" src="images/profile2.png" alt="Card image cap">
+                                <div class="card-body">
+
+                                <?php
+                                $rollno = $_SESSION['RollNo'];
+                                $sql="select * from LMS.user where RollNo='$rollno'";
+                                $result=$conn->query($sql);
+                                $row=$result->fetch_assoc();
+
+                                $name=$row['Name'];
+                                $category=$row['Category'];
+                                $email=$row['EmailId'];
+                                $mobno=$row['MobNo'];
+                                ?>    
+                                    <i>
+                                    <h1 class="card-title"><center><?php echo $name ?></center></h1>
+                                    <br>
+                                    <p><b>Email ID: </b><?php echo $email ?></p>
+                                    <br>
+                                    <p><b>Mobile number: </b><?php echo $mobno ?></p>
+                                    </b>
+                                </i>
+
+                                </div>
+                            </div>
+                        <br>
+                        <a href="profile.php" class="btn btn-primary">Edit Details</a>
+                        </center>               
+                    </div>
+                    
                     <!--/.span9-->
                 </div>
             </div>

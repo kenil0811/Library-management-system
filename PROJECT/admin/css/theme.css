@@ -1712,4 +1712,31 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 }
 @media(max-width:767px){body{padding:0!important}.wrapper{padding:20px 15px}}
 
+.card{
+	border: 2px;
+	font-family: "Times New Roman", Times, serif;
+	background: rgb(255, 255, 255);
+}
 
+.card-image-top{
+	text-align: center;
+}
+
+.card-body {
+	padding: 20px;
+	background: rgb(112, 128, 144);
+	text-align: left;
+	color: rgb(255, 255, 255);
+}
+
+.card-body p {
+	font-size: 20px;
+}
+
+.card-body h1 {
+	color: rgb(0, 0, 0);
+}
+
+.card-body b {
+	color: rgb(0, 0 , 0);
+}

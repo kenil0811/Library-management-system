@@ -88,8 +88,6 @@ if ($_SESSION['RollNo']) {
                                 $bookid=$row['BookId'];
                                 $name=$row['Title'];
                                 $avail=$row['Availability'];
-                            
-                           
                             ?>
                                     <tr>
                                       <td><?php echo $bookid ?></td>
