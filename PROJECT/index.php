@@ -88,6 +88,7 @@ require('dbconn.php');
 if(isset($_POST['signin']))
 {$u=$_POST['RollNo'];
  $p=$_POST['Password'];
+ $c=$_POST['Category'];
 
  $sql="select * from LMS.user where RollNo='$u'";
 
@@ -98,6 +99,7 @@ $y=$row['Type'];
 if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
   {//echo "Login Successful";
    $_SESSION['RollNo']=$u;
+   $_SESSION['Category']=$c;
    
 
   if($y=='Admin')
