@@ -3,12 +3,17 @@ require('dbconn.php');
 
 $bookid=$_GET['id1'];
 $rollno=$_GET['id2'];
-$category=$_SESSION['Category'];
 
-echo $category,$bookid,$rollno;
+$sql="select Category from LMS.user where RollNo='$rollno'";
+$result=$conn->query($sql);
+$row=$result->fetch_assoc();
 
-/*if($category == 'GEN' || $category == 'OBC' )
-{$sql1="update LMS.record set Date_of_Issue=curdate(),Due_Date=curdate()+60,Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
+$category=$row['Category'];
+
+
+
+if($category == 'GEN' || $category == 'OBC' )
+{$sql1="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 60 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
 
 if($conn->query($sql1) === TRUE)
 {
@@ -23,7 +28,7 @@ else
 }
 }
 else
-{$sql2="update LMS.record set Date_of_Issue=curdate(),Due_Date=curdate()+180,Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
+{$sql2="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 180 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
 
 if($conn->query($sql2) === TRUE)
 {
@@ -36,7 +41,7 @@ else
     header( "Refresh:1; url=requests.php", true, 303);
 
 }
-}*/
+}
 
 
 
