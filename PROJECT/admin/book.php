@@ -99,10 +99,6 @@ require('dbconn.php');
                                </tbody>
                                 </table>
                             </div>
-                    <!--/.span3-->
-                    <!--/.span9-->
-                
-                    <!--/.span3-->
                     <!--/.span9-->
                 </div>
             </div>
