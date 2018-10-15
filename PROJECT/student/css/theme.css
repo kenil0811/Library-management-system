@@ -1715,7 +1715,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 .card{
 	border: 2px;
 	font-family: "Times New Roman", Times, serif;
-	background: rgb(106, 90, 205);
+	background: rgb(255, 255, 255);
 }
 
 .card-image-top{
@@ -1723,11 +1723,20 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 }
 
 .card-body {
-	padding: 10px;
-	background: rgb(255, 255, 255);
+	padding: 20px;
+	background: rgb(112, 128, 144);
 	text-align: left;
+	color: rgb(255, 255, 255);
 }
 
 .card-body p {
 	font-size: 20px;
+}
+
+.card-body h1 {
+	color: rgb(0, 0, 0);
+}
+
+.card-body b {
+	color: rgb(0, 0 , 0);
 }
