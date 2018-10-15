@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require('dbconn.php');
 ?>
 
@@ -87,21 +88,28 @@ require('dbconn.php');
                                 $pswd=$row['Password'];
                                 ?>    
                     			
-                                <form class="form-horizontal row-fluid" action="edit_book_details.php?id=<?php echo $bookid ?>" method="post">
+                                <form class="form-horizontal row-fluid" action="edit_student_details.php?id=<?php echo $rollno ?>" method="post">
 
                                     <div class="control-group">
                                         <label class="control-label" for="Name">Name:</label>
                                         <div class="controls">
-                                            <input type="text" id="Name" name="Publisher" value= "<?php echo $name?>" class="span8" required>
+                                            <input type="text" id="Name" name="Name" value= "<?php echo $name?>" class="span8" required>
                                         </div>
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label" for="Category">Category:</label>
-                                        <div class="controls">
-                                            <input type="text" id="Category" name="Category" value= "<?php echo $category?>" class="span8" required>
-                                        </div>
+                                            <label class="control-label" for="Category">Category:</label>
+                                            <div class="controls">
+                                                <select name = "Category" tabindex="1" value="SC" data-placeholder="Select Category" class="span6">
+                                                    <option value="<?php echo $category?>"><?php echo $category ?> </option>
+                                                    <option value="GEN">GEN</option>
+                                                    <option value="OBC">OBC</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="ST">ST</option>
+                                                </select>
+                                            </div>
                                     </div>
+
 
                                     <div class="control-group">
                                         <label class="control-label" for="EmailId">Email Id:</label>
@@ -155,6 +163,31 @@ require('dbconn.php');
         <script src="scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
+
+<?php
+if(isset($_POST['submit']))
+{
+    $rollno = $_GET['id'];
+    $name=$_POST['Name'];
+    $category=$_POST['Category'];
+    $email=$_POST['EmailId'];
+    $mobno=$_POST['MobNo'];
+    $pswd=$_POST['Password'];
+
+$sql1="update LMS.user set Name='$name', Category='$category', EmailId='$email', MobNo='$mobno', Password='$pswd' where RollNo='$rollno'";
+
+
+
+if($conn->query($sql1) === TRUE){
+echo "<script type='text/javascript'>alert('Success')</script>";
+header( "Refresh:0.01; url=index.php", true, 303);
+}
+else
+{//echo $conn->error;
+echo "<script type='text/javascript'>alert('Error')</script>";
+}
+}
+?>
       
     </body>
 
