@@ -14,9 +14,10 @@ $category=$row['Category'];
 
 if($category == 'GEN' || $category == 'OBC' )
 {$sql1="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 60 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
-
+ 
 if($conn->query($sql1) === TRUE)
-{
+{$sql3="update LMS.book set Availability=Availability-1 where BookId='$bookid'";
+ $result=$conn->query($sql3);
 echo "<script type='text/javascript'>alert('Success')</script>";
 header( "Refresh:1; url=requests.php", true, 303);
 }
@@ -31,7 +32,8 @@ else
 {$sql2="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 180 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
 
 if($conn->query($sql2) === TRUE)
-{
+{$sql4="update LMS.book set Availability=Availability-1 where BookId='$bookid'";
+ $result=$conn->query($sql4);
 echo "<script type='text/javascript'>alert('Success')</script>";
 header( "Refresh:1; url=requests.php", true, 303);
 }
