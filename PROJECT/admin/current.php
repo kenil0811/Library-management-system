@@ -82,13 +82,14 @@ if ($_SESSION['RollNo']) {
                                       <th>Book name</th>
                                       <th>Issue Date</th>
                                       <th>Due date</th>
+                                      <th>Dues</th>
                                     </tr>
                                   </thead>
                                   <tbody>
 
                                 <?php
 
-                            $sql="select * from LMS.record,LMS.book where Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
+                            $sql="select record.BookId,RollNo,Title,Due_Date,Date_of_Issue,datediff(curdate(),Due_Date) as x from LMS.record,LMS.book where Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
 
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
@@ -98,6 +99,7 @@ if ($_SESSION['RollNo']) {
                                 $name=$row['Title'];
                                 $issuedate=$row['Date_of_Issue'];
                                 $duedate=$row['Due_Date'];
+                                $dues=$row['x'];
                             
                             ?>
 
@@ -107,6 +109,11 @@ if ($_SESSION['RollNo']) {
                                       <td><?php echo $name ?></td>
                                       <td><?php echo $issuedate ?></td>
                                       <td><?php echo $duedate ?></td>
+                                      <td><?php if($dues > 0)
+                                                  echo "<font color='red'>".$dues."</font>";
+                                                else
+                                                  echo "<font color='green'>0</font>";
+                                              ?>
                                     </tr>
                             <?php } ?>
                                     </tbody>

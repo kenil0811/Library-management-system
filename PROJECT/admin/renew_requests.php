@@ -111,7 +111,7 @@ if ($_SESSION['RollNo']) {
                                         if($renewals > 0)
                                         {echo "<a href=\"acceptrenewal.php?id1=".$bookid."&id2=".$rollno."\" class=\"btn btn-success\">Accept</a>";}
                                          ?>
-                                        <a href="rejectrenewal.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-danger">Reject</a>
+                                        <!--a href="rejectrenewal.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-danger">Reject</a-->
                                     </center></td>
                                     </tr>
                                <?php } ?>
