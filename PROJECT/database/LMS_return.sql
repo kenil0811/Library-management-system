@@ -16,33 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `return`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `return`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
+CREATE TABLE `return` (
   `RollNo` varchar(50) NOT NULL,
-  `Name` varchar(50) DEFAULT NULL,
-  `Type` varchar(50) DEFAULT NULL,
-  `Category` varchar(50) DEFAULT NULL,
-  `EmailId` varchar(50) DEFAULT NULL,
-  `MobNo` bigint(11) DEFAULT NULL,
-  `Password` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`RollNo`),
-  UNIQUE KEY `EmailId` (`EmailId`)
+  `BookId` int(10) NOT NULL,
+  PRIMARY KEY (`RollNo`,`BookId`),
+  KEY `BookId` (`BookId`),
+  CONSTRAINT `return_ibfk_1` FOREIGN KEY (`RollNo`) REFERENCES `record` (`RollNo`),
+  CONSTRAINT `return_ibfk_2` FOREIGN KEY (`BookId`) REFERENCES `record` (`BookId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `return`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('ADMIN','admin','Admin',NULL,'admin@nitc.ac.in',123456789,'admin'),('B160111Cs','Bharat','Student','GEN','bharat@gmail.com',123456,'abcd'),('B160158CS','MANU','Student','GEN','manu@gmail.com',8365917597,'manu'),('B160511CS','MALHAR','Student','OBC','malhar@gmail.com',9756153859,'abcd'),('B160632CS','KENIL','Student','GEN','kenilshah081198@gmail.com',9892506094,'1234'),('b160854cs','Ram Prabhu','Student','SC','ram@nitc.ac.in',968599,'1234');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `return` WRITE;
+/*!40000 ALTER TABLE `return` DISABLE KEYS */;
+INSERT INTO `return` VALUES ('b160511cs',2),('b160632cs',3),('b160511cs',6);
+/*!40000 ALTER TABLE `return` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-16 22:52:20
+-- Dump completed on 2018-10-16 22:52:19
