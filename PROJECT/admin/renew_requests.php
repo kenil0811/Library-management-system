@@ -84,7 +84,7 @@ if ($_SESSION['RollNo']) {
                                       <th>Roll Number</th>
                                       <th>Book Id</th>
                                       <th>Book Name</th>
-                                      <th>Availabilty</th>
+                                      <th>Renewals Left</th>
                                       <th></th>
                                     </tr>
                                   </thead>
