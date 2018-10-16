@@ -16,7 +16,7 @@ if($category == 'GEN' || $category == 'OBC' )
 {$sql1="update LMS.record set Due_Date=date_add(Due_Date,interval 60 day),Renewals_left=0 where BookId='$bookid' and RollNo='$rollno'";
  
 if($conn->query($sql1) === TRUE)
-{$sql3="delete from LMS.renewal where BookId='$bookid' and RollNo='$rollno'";
+{$sql3="delete from LMS.renew where BookId='$bookid' and RollNo='$rollno'";
  $result=$conn->query($sql3);
  
  $sql5="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','Your request for renewal of BookId: $bookid  has been accepted',curdate(),curtime())";
@@ -35,7 +35,7 @@ else
 {$sql2="update LMS.record set Due_Date=date_add(Due_Date,interval 180 day),Renewals_left=0 where BookId='$bookid' and RollNo='$rollno'";
 
 if($conn->query($sql2) === TRUE)
-{$sql4="delete from LMS.renewal where BookId='$bookid' and RollNo='$rollno'";
+{$sql4="delete from LMS.renew where BookId='$bookid' and RollNo='$rollno'";
  $result=$conn->query($sql4);
  $sql6="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','Your request for renewal of BookId: $bookid has been accepted',curdate(),curtime())";
  $result=$conn->query($sql6);
