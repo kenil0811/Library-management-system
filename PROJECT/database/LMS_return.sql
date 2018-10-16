@@ -27,8 +27,8 @@ CREATE TABLE `return` (
   `BookId` int(10) NOT NULL,
   PRIMARY KEY (`RollNo`,`BookId`),
   KEY `BookId` (`BookId`),
-  CONSTRAINT `return_ibfk_1` FOREIGN KEY (`RollNo`) REFERENCES `record` (`RollNo`),
-  CONSTRAINT `return_ibfk_2` FOREIGN KEY (`BookId`) REFERENCES `record` (`BookId`)
+  CONSTRAINT `return_ibfk_1` FOREIGN KEY (`RollNo`) REFERENCES `user` (`RollNo`),
+  CONSTRAINT `return_ibfk_2` FOREIGN KEY (`BookId`) REFERENCES `book` (`BookId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +38,7 @@ CREATE TABLE `return` (
 
 LOCK TABLES `return` WRITE;
 /*!40000 ALTER TABLE `return` DISABLE KEYS */;
-INSERT INTO `return` VALUES ('b160511cs',2),('b160632cs',3);
+INSERT INTO `return` VALUES ('b160632cs',3);
 /*!40000 ALTER TABLE `return` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-16 23:29:53
+-- Dump completed on 2018-10-16 23:50:39
