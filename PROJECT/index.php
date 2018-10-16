@@ -67,10 +67,11 @@ require('dbconn.php');
 				</select>
 				
 			
-			</form>
+			
 			<br>
 			<div class="send-button">
 			    <input type="submit" name="signup" value="Sign Up">
+			    </form>
 			</div>
 			<p>By creating an account, you agree to our <a class="underline" href="#">Terms</a></p>
 			<div class="clear"></div>

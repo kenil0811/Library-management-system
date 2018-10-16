@@ -84,18 +84,20 @@ if ($_SESSION['RollNo']) {
                                       <th>Roll Number</th>
                                       <th>Book Id</th>
                                       <th>Book Name</th>
+                                      <th>Dues</th>
                                       <th></th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <?php
-                            $sql="select * from LMS.return,LMS.book where return.BookId=book.BookId";
+                            $sql="select return.BookId,return.RollNo,Title,datediff(curdate(),Due_Date) as x from LMS.return,LMS.book,LMS.record where return.BookId=book.BookId and return.BookId=record.BookId and return.RollNo=record.RollNo";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
                                 $bookid=$row['BookId'];
                                 $rollno=$row['RollNo'];
                                 $name=$row['Title'];
+                                $dues=$row['x'];
                                 
                             
                            
@@ -104,12 +106,16 @@ if ($_SESSION['RollNo']) {
                                       <td><?php echo strtoupper($rollno) ?></td>
                                       <td><?php echo $bookid ?></td>
                                       <td><b><?php echo $name ?></b></td>
-                                      
+                                      <td><?php 
+                                      if($dues > 0)
+                                          echo $dues;
+                                          else
+                                          echo 0; ?></td>
                                       <td><center>
                                                                                 
                                         <a href="acceptreturn.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-success">Accept</a>
                                          
-                                        <a href="rejectreturn.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-danger">Reject</a>
+                                        <!--a href="rejectreturn.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-danger">Reject</a-->
                                     </center></td>
                                     </tr>
                                <?php } ?>
