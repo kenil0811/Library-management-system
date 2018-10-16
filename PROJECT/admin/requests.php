@@ -71,13 +71,24 @@ if ($_SESSION['RollNo']) {
                         </div>
                         <!--/.sidebar-->
                     </div>
-                    <div class="span9">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="span3">
                         <center>
-                        <a href="issue_requests.php" class="btn btn-info">Issue Requests</a>
-                        <a href="renew_requests.php" class="btn btn-info">Renew Request</a>
-                        <a href="return_requests.php" class="btn btn-info">Return Requests</a>
+                            <a href="issue_requests.php" class="btn btn-info" ><image width="100px" src="images/book2.png"></image><p>Issue Requests</p></a>
                         </center>
-                            </div>
+                    </div>
+                    <div class="span3">
+                        <center>
+                            <a href="renew_requests.php" class="btn btn-info"><image width="100px" src="images/book3.png"></image><p>Renew Request</p></a>
+                        </center>
+                    </div> 
+                    <div class="span3">
+                        <center>
+                            <a href="return_requests.php" class="btn btn-info"><image width="100px" src="images/book4.png"></image><p>Return Requests</p></a>
+                        </center>
+                    </div>
                     <!--/.span3-->
                     <!--/.span9-->
                 </div>
