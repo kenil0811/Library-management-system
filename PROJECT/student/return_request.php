@@ -5,7 +5,7 @@ $id=$_GET['id'];
 
 $roll=$_SESSION['RollNo'];
 
-$sql="insert into LMS.renew (RollNo,BookId) values ('$roll','$id')";
+$sql="insert into LMS.return (RollNo,BookId) values ('$roll','$id')";
 
 if($conn->query($sql) === TRUE)
 {
