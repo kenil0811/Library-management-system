@@ -30,7 +30,7 @@ require('dbconn.php');
 <!-- Body -->
 <body>
 
-	<h1>LIBRARY MEMBER LOGIN FORM</h1>
+	<h1>LIBRARY MEMBER LOGIN</h1>
 
 	<div class="container">
 
@@ -82,7 +82,7 @@ require('dbconn.php');
 	</div>
 
 	<div class="footer w3layouts agileits">
-		<p> &copy; 2016 Library Member Login Form. All Rights Reserved </a></p>
+		<p> &copy; 2018 Library Member Login. All Rights Reserved </a></p>
 	</div>
 
 <?php
