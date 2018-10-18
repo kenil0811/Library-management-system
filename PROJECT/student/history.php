@@ -71,6 +71,27 @@ if ($_SESSION['RollNo']) {
                     <!--/.span3-->
                     
                     <div class="span9">
+                        <form class="form-horizontal row-fluid" action="history.php" method="post">
+                                        <div class="control-group">
+                                            <label class="control-label" for="Search"><b>Search:</b></label>
+                                            <div class="controls">
+                                                <input type="text" id="title" name="title" placeholder="Enter Book Name/Book Id." class="span8" required>
+                                                <button type="submit" name="submit"class="btn">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <br>
+                                    <?php
+                                    $rollno = $_SESSION['RollNo'];
+                                    if(isset($_POST['submit']))
+                                        {$s=$_POST['title'];
+                                            $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId and (record.BookId='$s' or Title like '%$s%')";
+
+                                        }
+                                    else
+                                        $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId";
+
+                                    ?>
                         <table class="table" id = "tables">
                                   <thead>
                                     <tr>
@@ -83,9 +104,6 @@ if ($_SESSION['RollNo']) {
                                   <tbody>
 
                                 <?php
-
-                            $rollno = $_SESSION['RollNo'];
-                            $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NOT NULL and book.Bookid = record.BookId";
 
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())

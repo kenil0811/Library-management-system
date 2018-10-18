@@ -14,7 +14,7 @@ header( "Refresh:0.01; url=book.php", true, 303);
 }
 else
 {
-	echo "<script type='text/javascript'>alert('Error')</script>";
+	echo "<script type='text/javascript'>alert('Request Already Sent.')</script>";
     header( "Refresh:0.01; url=book.php", true, 303);
 
 }

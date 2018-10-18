@@ -73,6 +73,25 @@ if ($_SESSION['RollNo']) {
                     </div>
 
                     <div class="span9">
+                  <form class="form-horizontal row-fluid" action="book.php" method="post">
+                                        <div class="control-group">
+                                            <label class="control-label" for="Search"><b>Search:</b></label>
+                                            <div class="controls">
+                                                <input type="text" id="title" name="title" placeholder="Enter Name/ID of Book" class="span8" required>
+                                                <button type="submit" name="submit"class="btn">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <br>
+                                    <?php
+                                    if(isset($_POST['submit']))
+                                        {$s=$_POST['title'];
+                                            $sql="select * from LMS.book where BookId='$s' or Title like '%$s%'";
+                                        }
+                                    else
+                                        $sql="select * from LMS.book";
+
+                                    ?>
                         <table class="table" id = "tables">
                                   <thead>
                                     <tr>
@@ -84,7 +103,7 @@ if ($_SESSION['RollNo']) {
                                   </thead>
                                   <tbody>
                                     <?php
-                            $sql="select * from LMS.book";
+                            
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
