@@ -90,6 +90,15 @@ if ($_SESSION['RollNo']) {
                                     else
                                         $sql="select * from LMS.record,LMS.book where RollNo = '$rollno' and Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
 
+                                    $result=$conn->query($sql);
+                                    $rowcount=mysqli_num_rows($result);
+
+                                    if(!($rowcount))
+                                        echo "<br><center><h2><b><i>No Results</i></b></h2></center>";
+                                    else
+                                    {
+
+                                
                                     ?>
                         <table class="table" id = "tables">
                                   <thead>
@@ -106,7 +115,7 @@ if ($_SESSION['RollNo']) {
                                 <?php
 
                             
-                            $result=$conn->query($sql);
+                            //$result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
                                 $bookid=$row['BookId'];
@@ -130,7 +139,7 @@ if ($_SESSION['RollNo']) {
                                         <a href="return_request.php?id=<?php echo $bookid; ?>" class="btn btn-primary">Return</a>
                                         </center></td>
                                     </tr>
-                            <?php } ?>
+                            <?php }} ?>
                                     </tbody>
                                 </table>
                     </div>

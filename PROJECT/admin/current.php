@@ -91,7 +91,15 @@ if ($_SESSION['RollNo']) {
                                         }
                                     else
                                         $sql="select record.BookId,RollNo,Title,Due_Date,Date_of_Issue,datediff(curdate(),Due_Date) as x from LMS.record,LMS.book where Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
+                                    $result=$conn->query($sql);
+                                    $rowcount=mysqli_num_rows($result);
 
+                                    if(!($rowcount))
+                                        echo "<br><center><h2><b><i>No Results</i></b></h2></center>";
+                                    else
+                                    {
+
+                                    
                                     ?>
                         <table class="table" id = "tables">
                                   <thead>
@@ -110,7 +118,7 @@ if ($_SESSION['RollNo']) {
 
                             
 
-                            $result=$conn->query($sql);
+                            //$result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
                                 $rollno=$row['RollNo'];
@@ -134,7 +142,7 @@ if ($_SESSION['RollNo']) {
                                                   echo "<font color='green'>0</font>";
                                               ?>
                                     </tr>
-                            <?php } ?>
+                            <?php }} ?>
                                     </tbody>
                                 </table>
                     </div>

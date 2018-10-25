@@ -111,7 +111,7 @@ if ($_SESSION['RollNo']) {
                                         if($avail > 0)
                                         {echo "<a href=\"accept.php?id1=".$bookid."&id2=".$rollno."\" class=\"btn btn-success\">Accept</a>";}
                                          ?>
-                                        <a href="reject.php?id1=<?php echo $bookid; ?>&id2=<?php echo $rollno; ?>" class="btn btn-danger">Reject</a>
+                                        <a href="reject.php?id1=<?php echo $bookid ?>&id2=<?php echo $rollno ?>" class="btn btn-danger">Reject</a>
                                     </center></td>
                                     </tr>
                                <?php } ?>

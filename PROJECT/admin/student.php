@@ -92,6 +92,15 @@ if ($_SESSION['RollNo']) {
                                     else
                                         $sql="select * from LMS.user where RollNo<>'ADMIN'";
 
+                                    $result=$conn->query($sql);
+                                    $rowcount=mysqli_num_rows($result);
+
+                                    if(!($rowcount))
+                                        echo "<br><center><h2><b><i>No Results</i></b></h2></center>";
+                                    else
+                                    {
+
+                                    
                                     ?>
                         <table class="table" id = "tables">
                                   <thead>
@@ -105,7 +114,7 @@ if ($_SESSION['RollNo']) {
                                   <tbody>
                     <?php
                             
-                            $result=$conn->query($sql);
+                            //$result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
 
@@ -124,7 +133,7 @@ if ($_SESSION['RollNo']) {
                                       </center>
                                         </td>
                                     </tr>
-                            <?php } ?>
+                            <?php }} ?>
                                   </tbody>
                                 </table>
                             </div>
