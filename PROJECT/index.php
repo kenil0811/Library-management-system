@@ -65,7 +65,7 @@ require('dbconn.php');
 					<option value="SC">SC</option>
 					<option value="ST">ST</option>
 				</select>
-				
+				<br>
 			
 			
 			<br>
