@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
 --
 -- Host: localhost    Database: LMS
 -- ------------------------------------------------------
--- Server version	5.7.22-0ubuntu0.17.10.1
+-- Server version	5.7.23-0ubuntu0.18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -38,6 +38,7 @@ CREATE TABLE `renew` (
 
 LOCK TABLES `renew` WRITE;
 /*!40000 ALTER TABLE `renew` DISABLE KEYS */;
+INSERT INTO `renew` VALUES ('b160158cs',2),('b160158cs',9),('b160001cs',11),('b160511cs',11),('b160158cs',18);
 /*!40000 ALTER TABLE `renew` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-26  0:53:21
+-- Dump completed on 2018-10-25 23:35:03

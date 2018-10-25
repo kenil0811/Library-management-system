@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
 --
 -- Host: localhost    Database: LMS
 -- ------------------------------------------------------
--- Server version	5.7.22-0ubuntu0.17.10.1
+-- Server version	5.7.23-0ubuntu0.18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +39,7 @@ CREATE TABLE `recommendations` (
 
 LOCK TABLES `recommendations` WRITE;
 /*!40000 ALTER TABLE `recommendations` DISABLE KEYS */;
-INSERT INTO `recommendations` VALUES (2,'Book1','Descp1','B160158CS'),(3,'Book2','Descp2','B160158CS'),(4,'The PlayBook','Best Book','b160511cs'),(5,'Operating System','An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs.','b160001cs'),(6,'The Bro Code','Will be good with the PlayBook','b160001cs'),(7,'Networks ','A computer network, or data network, is a digital telecommunications network which allows nodes to share resources. In computer networks, computing devices exchange data with each other using connections (data links) between nodes.','b160999cs'),(8,'String Theory','In physics, string theory is a theoretical framework in which the point-like particles of particle physics are replaced by one-dimensional objects called strings. It describes how these strings propagate through space and interact with each other.','b160777cs'),(9,'The Theory of Everything','The Theory of Everything','b160777cs');
+INSERT INTO `recommendations` VALUES (2,'Book1','Descp1','B160158CS'),(3,'Book2','Descp2','B160158CS'),(5,'Operating System','An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs.','b160001cs'),(7,'Networks ','A computer network, or data network, is a digital telecommunications network which allows nodes to share resources. In computer networks, computing devices exchange data with each other using connections (data links) between nodes.','b160999cs'),(8,'String Theory','In physics, string theory is a theoretical framework in which the point-like particles of particle physics are replaced by one-dimensional objects called strings. It describes how these strings propagate through space and interact with each other.','b160777cs'),(9,'The Theory of Everything','The Theory of Everything','b160777cs');
 /*!40000 ALTER TABLE `recommendations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-26  0:53:22
+-- Dump completed on 2018-10-25 23:35:03
