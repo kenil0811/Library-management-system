@@ -73,7 +73,7 @@ require('dbconn.php');
 			    <input type="submit" name="signup" value="Sign Up">
 			    </form>
 			</div>
-			<p>By creating an account, you agree to our <a class="underline" href="#">Terms</a></p>
+			<p>By creating an account, you agree to our <a class="underline" href="terms.html">Terms</a></p>
 			<div class="clear"></div>
 		</div>
 
@@ -83,6 +83,7 @@ require('dbconn.php');
 
 	<div class="footer w3layouts agileits">
 		<p> &copy; 2018 Library Member Login. All Rights Reserved </a></p>
+		<p><a class="underline" href="about.html">About the Project</a></p>
 	</div>
 
 <?php
